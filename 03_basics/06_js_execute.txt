@@ -1,0 +1,45 @@
+#javascript execution context
+
+1. 
+  A. Global execution context (this is referred by this, (stored in it))
+     (in browser, this = window object)
+
+      Js is single threaded
+ B. Function execution context
+ C. Eval execution context
+
+ Phases: 
+    first: "memory" creation phase (only location is allocated)
+      val1, val2 = undefined
+      addNum = definition 
+      result 1,2 = undefined
+    
+    second: execution phase
+      val1 = 10 (value is assigned)
+      val2 = 5
+      (nothing in addNum as its defined in MCP, no execution )
+      (it will make its own execution box)
+      addNum = new variable environment + execution thread
+         new sandbox is created 
+         now we will have another memory phase 
+         "MCP"
+           val1 = undefined
+           val2 = undefined
+           total = undefined
+        "execution"
+           num1 = 10
+           num2 = 5
+           total = 15 ("return total": it is also returned back in global execution context)
+        *this whole sandbox is deleted after work is done
+      now for result 1,2 we need addNum
+      result 1 = 15
+      for result2 we will a function to execute now we will make another sandbox (new variable environment + thread)
+      "memory phase"
+      "execution phase"
+
+
+#Call Stack
+  
+  LIFO 
+
+
